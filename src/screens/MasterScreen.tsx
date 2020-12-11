@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { Button, Text, TextInput, TouchableOpacity, View, BackHandler } from 'react-native';
+import { Button, Text, TextInput, TouchableOpacity, View, BackHandler, RefreshControl } from 'react-native';
 import { SafeAreaView, StackActions } from 'react-navigation';
 import { DrawerActions, NavigationDrawerProp } from 'react-navigation-drawer';
 import Icon from 'react-native-vector-icons/Entypo';
+import { RefreshExample } from '@src/components/RefreshExample';
 
 /**
  * https://reactnavigation.org/docs/4.x/typescript
@@ -45,10 +46,7 @@ const MasterScreen = (props: Props) => {
                 </TouchableOpacity>
             </View>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Icon name="controller-play" size={24} />
-                <Text>{props.navigation.state.routeName}</Text>
-                <TextInput placeholder="Enter text here..."></TextInput>
-                <Button title="Press me" onPress={() => onButtonPress()}></Button>
+                <RefreshExample />
             </View>
         </SafeAreaView>
 
